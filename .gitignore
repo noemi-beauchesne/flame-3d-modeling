@@ -1,11 +1,37 @@
-# Ignore everything in data except .gitkeep
-data/*
-!data/*/.gitkeep
-
-# Python cache & build files
+# === Python cache & compiled files ===
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# === Build & packaging ===
 build/
 dist/
 *.egg-info/
+.eggs/
+
+# === Virtual environments ===
+venv/
+env/
+.venv/
+.pyenv/
+# Ignore all pyenv virtualenvs in .python-version
+.python-version
+
+# === IDE & editor files ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# === Data ===
+# Ignore all generated data but keep .gitkeep placeholders
+data/*
+!data/*/.gitkeep
+
+# === Logs ===
+*.log
+logs/
+!data/logs/.gitkeep
+
+# === Tests cache ===
+.pytest_cache/

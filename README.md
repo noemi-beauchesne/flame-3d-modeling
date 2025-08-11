@@ -24,18 +24,18 @@ The codebase is Python 3.4–safe for acquisition, with optional modern visualiz
 
 # Project Structure
 
-`src/model3d/`
-    `core/`        # Interfaces + runner
-    `config/`      # Config loader, presets
-    `hardware/`    # Real & mock hardware drivers
-    `modeling/`    # Coordinates, trajectories, interpolation, visualization
-    `io/`          # Run/session management
-    `ui/`          # CLI for acquisition & viewing
-`data/`
-    `raw/`         # Raw inputs (optional)
-    `runs/`        # Timestamped runs with CSV + metadata
-    `logs/`        # Runtime logs
-`tests/`
+src/model3d/
+    core/        # Interfaces + runner
+    config/      # Config loader, presets
+    hardware/    # Real & mock hardware drivers
+    modeling/    # Coordinates, trajectories, interpolation, visualization
+    io/          # Run/session management
+    ui/          # CLI for acquisition & viewing
+data/
+    raw/         # Raw inputs (optional)
+    runs/        # Timestamped runs with CSV + metadata
+    logs/        # Runtime logs
+tests/
     ...          # Unit & integration tests
 
 
@@ -75,6 +75,47 @@ The codebase is Python 3.4–safe for acquisition, with optional modern visualiz
     pyenv shell viz311
     pip install matplotlib pandas
     pip install -e .
+
+4. Add .gitignore to keep your repo clean
+
+    Create a .gitignore in your project root with:
+        # === Python cache & compiled files ===
+        __pycache__/
+        *.py[cod]
+        *$py.class
+
+        # === Build & packaging ===
+        build/
+        dist/
+        *.egg-info/
+        .eggs/
+
+        # === Virtual environments ===
+        venv/
+        env/
+        .venv/
+        .pyenv/
+        .python-version
+
+        # === IDE & editor files ===
+        .vscode/
+        .idea/
+        *.swp
+        .DS_Store
+
+        # === Data ===
+        data/*
+        !data/*/.gitkeep
+
+        # === Logs ===
+        *.log
+        logs/
+        !data/logs/.gitkeep
+
+        # === Tests cache ===
+        .pytest_cache/
+
+    This ensures data/runs/ and other large/generated files never get committed, while keeping empty folders tracked via .gitkeep.
 
 
 -----
@@ -138,7 +179,7 @@ Example CSV:
 
 -----
 
-Development
+# Development
     -   Code is Python 3.4–safe to allow deployment to older systems
     -   Mock hardware allows full CLI testing without physical devices
     -   Folder structure follows src/ layout with explicit package names
