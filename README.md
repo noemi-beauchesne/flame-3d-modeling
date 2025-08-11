@@ -9,16 +9,16 @@ The codebase is Python 3.4–safe for acquisition, with optional modern visualiz
 
 # Features
 ## Hardware control
-    -   Aerotech motorized stage (via ctypes/GPIB)
-    -   J-KEM thermocouple temperature readings
-    -   Mock hardware for offline testing
+-   Aerotech motorized stage (via ctypes/GPIB)
+-   J-KEM thermocouple temperature readings
+-   Mock hardware for offline testing
 ## Acquisition pipeline
-    -   Configurable gas ratios, motion parameters, and trajectories
-    -   Automatic run folder creation with metadata + CSV output
-    -   Supports cylindrical ring and grid trajectories
+-   Configurable gas ratios, motion parameters, and trajectories
+-   Automatic run folder creation with metadata + CSV output
+-   Supports cylindrical ring and grid trajectories
 ## Visualization
-    -   3D scatter plots and 2D XY heatmaps from recorded runs
-    -   Runs in a modern Python environment for painless plotting
+-   3D scatter plots and 2D XY heatmaps from recorded runs
+-   Runs in a modern Python environment for painless plotting
 
 -----
 
@@ -44,13 +44,13 @@ tests/
 # Requirements
 
 ## Acquisition environment (py34-compatible-env):
-    -   Python 3.6.15 (Python 3.4–compatible syntax)
-    -   Minimal dependencies (no matplotlib required)
-    -   Runs hardware acquisition or mock mode
+-   Python 3.6.15 (Python 3.4–compatible syntax)
+-   Minimal dependencies (no matplotlib required)
+-   Runs hardware acquisition or mock mode
 
 ## Visualization environment (viz311):
-    -   Python 3.11+ recommended
-    -   matplotlib, pandas for plotting
+-   Python 3.11+ recommended
+-   matplotlib, pandas for plotting
 
 -----
 
@@ -137,8 +137,8 @@ Run in viz311:
     python -m src.model3d.ui.view_latest
 
 Displays:
-    -   3D scatter of temperature field
-    -   2D XY heatmap at median Z
+-   3D scatter of temperature field
+-   2D XY heatmap at median Z
 
 ⸻
 
@@ -146,19 +146,19 @@ Displays:
 
 You can run the acquisition CLI without any hardware connected.
 The mock mode uses placeholder drivers that:
-    -   Simulate motor movement instantly
-    -   Return random temperatures around 800 °C
+-   Simulate motor movement instantly
+-   Return random temperatures around 800 °C
 
 To use mock mode:
-    1. Make sure your py34-compatible-env is active
-	2.	Ensure src/model3d/hardware/aerotech_controller.py and src/model3d/hardware/thermocouple_jkem.py still contain the placeholder classes provided in the repo
-	3.	Run:
-            python -m src.model3d.ui.cli
+1. Make sure your py34-compatible-env is active
+2.	Ensure src/model3d/hardware/aerotech_controller.py and src/model3d/hardware/thermocouple_jkem.py still contain the placeholder classes provided in the repo
+3.	Run:
+        python -m src.model3d.ui.cli
 
 The program will:
-    -   Generate fake coordinates from the default trajectory
-    -   Record random temperatures to a CSV
-    -   Save data in data/runs/<timestamp>/
+-   Generate fake coordinates from the default trajectory
+-   Record random temperatures to a CSV
+-   Save data in data/runs/<timestamp>/
 
 You can then visualize this fake run using the visualization CLI in your viz311 environment.
 
@@ -167,8 +167,8 @@ You can then visualize this fake run using the visualization CLI in your viz311 
 # Data Output
 
 For each run:
-    -   run.txt — metadata (gas ratio, model name, date/time)
-    -   samples.csv — measurement points with (time, x, y, z, temp_c)
+-   run.txt — metadata (gas ratio, model name, date/time)
+-   samples.csv — measurement points with (time, x, y, z, temp_c)
 
 Example CSV:
 
@@ -180,6 +180,6 @@ Example CSV:
 -----
 
 # Development
-    -   Code is Python 3.4–safe to allow deployment to older systems
-    -   Mock hardware allows full CLI testing without physical devices
-    -   Folder structure follows src/ layout with explicit package names
+-   Code is Python 3.4–safe to allow deployment to older systems
+-   Mock hardware allows full CLI testing without physical devices
+-   Folder structure follows src/ layout with explicit package names
