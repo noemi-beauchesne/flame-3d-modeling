@@ -1,0 +1,1 @@
+"""Modeling utilities (coords, trajectories, interpolation) — 3.4–safe."""

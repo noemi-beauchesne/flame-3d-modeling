@@ -1,0 +1,11 @@
+# Ignore everything in data except .gitkeep
+data/*
+!data/*/.gitkeep
+
+# Python cache & build files
+__pycache__/
+*.pyc
+*.pyo
+build/
+dist/
+*.egg-info/

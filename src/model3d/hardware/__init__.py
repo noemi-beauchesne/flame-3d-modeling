@@ -1,0 +1,1 @@
+"""Concrete hardware drivers (mock placeholders here), 3.4–safe."""
