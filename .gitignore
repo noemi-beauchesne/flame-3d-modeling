@@ -34,4 +34,4 @@ logs/
 !data/logs/.gitkeep
 
 # === Tests cache ===
-.pytest_cache/
+.pytest_cache/.DS_Store
